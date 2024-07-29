@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <h1>This is header</h1>
+      <ul id="list">
+        <li class="item">contact</li>
+        <li class="item">contact</li>
+        <li class="item">about</li>
+        <li class="item">Blog</li>
+        <li class="item">container</li>
+      </ul>
+    </div>
+
+    <h1>Todo list Item remove or add function</h1>
+    <div class="container" id="container">
+      <h1>This is header</h1>
+      <ul id="todo_list">
+        <li class="todo">contact</li>
+        <li class="todo">about</li>
+        <li class="todo">Blog</li>
+        <li class="todo">contact</li>
+        <li class="todo">container</li> <br>
+        
+      </ul> 
+      <button id="addbutton">Add Item</button>
+      
+
+    </div>
+
+    <script>
+      // dinamic click event functoin list or array
+      var items = document.getElementsByClassName("item");
+
+      for (let i = 0; i < items.length; i++) {
+        const element = items[i];
+
+        element.addEventListener("click", function (event) {
+          console.log(this); // or , event.target
+        });
+      }
+
+      // todo list item  revome 
+  /*
+
+      var todoLi = document.getElementsByClassName("todo");
+      for (let i = 0; i < todoLi.length; i++) {
+        const element = todoLi[i];
+        element.addEventListener("click", function (event) {
+        var removeItem =  event.target.parentNode.removeChild(event.target);
+        console.log(removeItem);
+        });
+      }
+
+  **/
+      // todo list item add 
+     var todoLi = document.getElementById('addbutton');
+          todoLi.addEventListener('click',addItem);
+
+          function addItem(event){
+            var itemParent = document.getElementById('todo_list');
+            var newItem = document.createElement('li');
+            newItem.innerText = 'new item add';
+            itemParent.appendChild(newItem);
+          }
+    // event babbul propagation function use remove list item 
+     var todoLi = document.getElementById('todo_list');
+        todoLi.addEventListener('click',removeItem);
+
+        function removeItem(event){  // 
+          event.target.parentNode.removeChild(event.target);
+        }
+    
+    </script>
+  </body>
+</html>

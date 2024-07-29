@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <h1>This is header</h1>
+      <ul id="list">
+        <li id="fastItem">Home</li>
+        <li>contact</li>
+        <li>about</li>
+        <li>Blog</li>
+      </ul>
+    </div>
+
+    <script>
+      // javascripet babbule tree function
+      document
+        .getElementById("fastItem")
+        .addEventListener("click", function () {
+          console.log("click item");
+          event.stopPropagation(); // multi function wokd stop // babbol propagation stop
+
+          // event.stopImmediatePropagation(); 
+
+        });
+
+      document.getElementById("list")
+      .addEventListener("click", function () {
+        console.log("click  list ");
+         event.stopPropagation();    /// stop babble propagation
+      });
+
+      document
+        .getElementById("container")
+        .addEventListener("click", function () {
+          console.log("click container ");
+          event.stopPropagation(); 
+
+        });
+
+      //one click work multi function output
+    </script>
+  </body>
+</html>

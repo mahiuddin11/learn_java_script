@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 onclick="console.log('click event tractic')">Exploring event</h1>
+    <button onclick="alert('hello,')">Click Me</button>
+
+    <div class="container">
+      <h2>Click Event Hendler</h2>
+      <button onclick="clickHandler()">Click</button><br /><br />
+    </div>
+
+    <h1 id="title">This is the colorful title</h1>
+
+    <button id="fastBtn">alart function</button>
+    <button id="secendBtn">BackGround Change</button>
+    <button id="bgReset">Background reset</button>
+    <button id="bgTometo">Background Tometo</button><br /><br />
+    <button id="textColor">text color change</button>
+    <button id="changeColor">color change</button>
+
+    <script>
+      function clickHandler() {
+        console.log("I am click Response");
+      }
+
+      // button call and some comand
+      var fastbtn = document.getElementById("fastBtn");
+      fastbtn.onclick = function () {
+        alert("click fist button ");
+        console.log("fast button succesfully clicked ");
+      };
+
+      // secend btn call function and some comand apply then action
+      var secendButton = document.getElementById("secendBtn");
+      secendButton.onclick = secendHendler;
+
+      function secendHendler() {
+        var pageBody = document.body;
+        pageBody.style.backgroundColor = "green";
+      }
+
+      // 3rd button body bagground rest
+
+      function bgRest() {
+        var bgRest = document.body;
+        bgRest.style.backgroundColor = "white";
+      }
+
+      var bgReset = document.getElementById("bgReset");
+      bgReset.onclick = bgRest;
+
+      // addEvent Listener call function and get action
+      var getId = document.getElementById("bgTometo");
+      getId.addEventListener("click", bgTometo);
+
+      function bgTometo() {
+        var bg = document.body;
+        bg.style.backgroundColor = "tomato";
+      }
+
+      // test color change by oneline code style
+      // anunimus  function // empty name function // blink name function
+      document
+        .getElementById("textColor")
+        .addEventListener("click", function () {
+        document.getElementById("title").style.color = "tomato";
+        });
+
+      document
+        .getElementById("changeColor")
+        .addEventListener("click", function () {
+        document.getElementById("title").style.color = "blue";
+        });
+    </script>
+  </body>
+</html>
